@@ -18,9 +18,9 @@ $_5colorspecial : #36413e8a; */
     align-items: center;
     /* width: calc(100vw); */
     /* height: 100vw; */
-    flex-grow: 1;
+    /* flex-grow: 1; */
     /* overflow-x: hidden; */
-    min-width: fit-content;
+    /* min-width: fit-content; */
     z-index: 5;
 }
 
@@ -29,7 +29,8 @@ $_5colorspecial : #36413e8a; */
     flex-direction: column;
     justify-content: stretch;
     align-items: center;
-    width: 100%;
+    width: 90%;
+    margin: 0;
     /* height: 100vw; */
     /* flex-basis: 1; */
     overflow-x: hidden;
@@ -122,3 +123,16 @@ $_5colorspecial : #36413e8a; */
     left: 20px;
     z-index: 2;
 } */
+@media (max-width: 500px){
+    h1{
+        font-size: 20px;
+    }
+    h2{
+        font-size: 10px;
+    }
+    .HeadshotContainer{
+        height: 200px;
+        width: 200px;
+        background-size: 220px 220px;
+    }
+}

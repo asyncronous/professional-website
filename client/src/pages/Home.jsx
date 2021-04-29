@@ -33,11 +33,11 @@ export default function Projects(props) {
                     Unity Dev | 
                     Photographer
                 </h1> */}
-                <h1 className="HomeContent">
+                <h2 className="HomeContent">
                 Junior Full Stack Developer | 
                     Unity Dev | 
                     Amateur Writer & Photographer
-                </h1>
+                </h2>
         </div>
       </div>
       
