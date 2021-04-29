@@ -16,7 +16,7 @@
     },
     "scripts": {
         "start-client": "react-scripts start",
-        "build": "(cd backend && yarn install) && (cd ../client && react-scripts build)",
+        "build": "(cd backend && yarn install && yarn run build)",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
         "start": "cd backend && yarn start"
