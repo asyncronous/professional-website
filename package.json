@@ -7,6 +7,9 @@
         "@testing-library/react": "^11.1.0",
         "@testing-library/user-event": "^12.1.10"
     },
+    "engines": {
+        "node": "14.13.1"
+    },
     "scripts": {
         "start-client": "react-scripts start",
         "build": "(cd backend && yarn install && yarn run build)",
