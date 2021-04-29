@@ -1,0 +1,75 @@
+.fallingLeaves{
+    position: fixed;
+    top: 0;
+    /* z-index: 9999; */
+}
+
+.fallingLeaves span {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin: -280px 40px 54px -50px;
+        /* z-index: 9999; */
+
+    background: 
+    url("../images/leaf.png");
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+
+    filter: brightness(0) saturate(100%) invert(8%) sepia(74%) saturate(3490%) hue-rotate(350deg) brightness(106%) contrast(86%);
+
+    animation: fallingLeaves 11s infinite linear;
+    -webkit-animation: fallingLeaves 11s infinite linear;
+    -moz-animation: fallingLeaves 11s infinite linear;
+}
+    
+.fallingLeaves span:nth-child(6n+5) {
+    animation-delay: 0.8s;
+    -webkit-animation-delay: 0.8s;
+    -moz-animation-delay: 0.8s;
+}
+    
+.fallingLeaves span:nth-child(6n+4) {
+    animation-delay: 2.6s;
+    -webkit-animation-delay: 2.6s;
+    -moz-animation-delay: 2.6s;
+}
+.fallingLeaves span:nth-child(6n+3) {
+    animation-delay: 6.7s;
+    -webkit-animation-delay: 6.7s;
+    -moz-animation-delay: 6.7s;
+}
+.fallingLeaves span:nth-child(6n+2) {
+    animation-delay: 8.8s;
+    -webkit-animation-delay: 8.8s;
+    -moz-animation-delay: 8.8s;
+}
+.fallingLeaves span:nth-child(6n+1) {
+    animation-delay: 10.9s;
+    -webkit-animation-delay: 10.9s;
+    -moz-animation-delay: 10.9s;
+}
+.fallingLeaves span:nth-child(6n) {
+    animation-delay: 12.2s;
+    -webkit-animation-delay: 12.2s;
+    -moz-animation-delay: 12.2s;
+}
+
+@keyframes fallingLeaves {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+        -webkit-transform: translate(0, 0px) rotateZ(0deg);
+    }
+    75% {
+        opacity: 1;
+        transform: translate(100px, 600px) rotateX(270deg) rotateY(270deg) rotateZ(270deg);
+        -webkit-transform: translate(100px, 600px) rotateZ(270deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(150px, 800px) rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+        -webkit-transform: translate(150px, 800px) rotateZ(360deg);
+    }
+}

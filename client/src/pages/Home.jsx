@@ -1,5 +1,6 @@
 // import { Link } from 'react-router-dom'
 import "./Home.css";
+import "../components/FallingLeaves.css";
 import UserContext from "../components/UserContext";
 
 import React from "react";
@@ -40,7 +41,25 @@ export default function Projects(props) {
                 </h2>
         </div>
       </div>
-      
+      <div className="fallingLeaves">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+
+          
+
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+      </div>
     </div>
   );
 }
