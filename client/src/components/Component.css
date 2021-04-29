@@ -1,0 +1,97 @@
+.Component {
+    /* border: 5px solid green; */
+    /* min-height: 25px; */
+    background-color: rgb(104, 29, 29);
+    height: 5vh;
+    z-index: 9999;
+    position: relative;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.ComponentFooter {
+    /* border: 5px solid green; */
+    /* min-height: 25px; */
+    background-color: rgb(104, 29, 29);
+    height: 5vh;
+    z-index: 9999;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Component h3 {
+    padding: 20px;
+}
+
+/* [ON BIG SCREEN] */
+/* Wrapper */
+#hamnav {
+    /* max-width: 120px; */
+    background: #100F21;
+    /* Optional */
+    position: sticky;
+    /* position: -webkit-sticky; */
+    top: 5vh;
+    height: 95vh;
+}
+
+/* Hide Hamburger */
+#hamnav label, #hamburger { 
+    display: none;  
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Horizontal Menu Items */
+#hamitems { 
+    display: flex;
+    flex-direction: column;
+    width:100%;
+}
+#hamitems a {
+    /* width: calc(100% - 10px); /* 100% / 5 tabs = 20% */
+    padding: 10px; 
+    /* color: white; */
+    text-decoration: none;
+    text-align: center;
+    border-top: 1px solid #373E5B;
+}
+#hamitems a:hover {
+background: rgba(104, 29, 29, 1);
+/* display: block; */
+}
+
+/* [ON SMALL SCREENS] */
+@media screen and (max-width: 768px){
+/* Show Hamburger Icon */
+    #hamnav label { 
+        display: inline-block; 
+        /* color: white; */
+        border: solid rgb(104, 29, 29);
+        /* border-top: 0; */
+        border-width: 0 2px 2px 2px;
+        background: rgb(104, 29, 29);
+        font-style: normal;
+        font-size: 1.2em;
+        padding: 10px;
+    }
+
+    /* Break down menu items into vertical */
+    #hamitems a {
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        border-top: 1px solid #373E5B;
+    }
+
+    /* Toggle Show/Hide Menu */
+    #hamitems { display: none; }
+    #hamnav input:checked ~ #hamitems{ 
+        display: block; 
+        width: 100%;
+    }
+    /* #hamnav input:checked ~ #hamitems label{ width: 100%} */
+}

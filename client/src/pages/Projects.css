@@ -1,0 +1,132 @@
+.Heading{
+    text-align: center;
+    /* position: relative; */
+    /* background-color: rgba(55, 62, 91, 0.75); */
+    background-color: rgba(104, 29, 29, 0.75);
+    border-radius: 4px;
+    /* justify-self: center; */
+    /* width: 50%; */
+    /* opacity: 1; */
+    z-index: 1;
+    margin-bottom: 8px;
+    margin-top: 5px;
+}
+
+.Projects {
+    margin: 10px;
+    /* margin-bottom: 5vh; */
+    height: fit-content;
+    /* overflow-y:scroll; */
+}
+
+.ProjectElement {
+    width: 100%;
+    /* height: auto; */
+    /* position: relative; */
+    /* z-index: -1; */
+}
+.ProjectElement img{
+    border: 3px solid rgba(104, 29, 29, 1);
+    /* padding: 5px; */
+    /* margin: 10px; */
+    opacity: 0.8;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    /* min-height: 25px;  */
+}
+
+.ProjGalleryContainer {
+    /* border: 5px solid blue; */
+    /* line-height: 0; */
+    column-count: 3;
+    column-gap: 12px;  
+    display: inline-block;
+    /* margin: 10px; */
+    margin-bottom: 0px;
+    /* margin-right: 15px; */
+    width: calc(100% - 5px);
+    /* margin-bottom: 35px; */
+    /* min-height: 25px;  */
+}
+
+.ProjectsContainer {
+    /* border: 5px solid blue; */
+    /* line-height: 0;
+    column-count: 5;
+    column-gap: 10px;  
+    display: inline-block;
+    /* margin: 5px; */
+    /* width: calc(100% - 9px); */
+    margin-bottom: 5vh;
+    /* min-height: 25px;  */
+}
+
+/* .ProjectElement:hover img {
+    /* opacity: 0.3; */
+
+  
+.ProjectElement:hover .GalleryInfo {
+    opacity: 1;
+}
+
+.ProjectInfo {
+  /* transition: .5s ease; */
+  /* opacity: 0; */
+  /* position: absolute; */
+  /* z-index: 2; */
+  /* top: calc(50% + 5px); */
+  /* left: calc(50% + 5px); */
+  /* width: 90%; */
+  /* height: 90%; */
+  /* line-height: 1.6; */
+  /* transform: translate(-50%, -50%); */
+  /* text-align: center; */
+  border: 2px solid #760419;
+  /* overflow-wrap: break-word; */
+  /* margin-left: 10px; */
+  /* margin-right: 10px; */
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+.ProjElementTitle {
+    background-color: #100F21;
+    color: #F0E9E5;
+    font-size: 16px;
+    padding: 16px 16px;
+}
+
+.ProjElementContent {
+    background-color: #760419;
+    color: #F0E9E5;
+    font-size: 16px;
+    padding: 16px 16px;
+}
+
+.Spacer {
+    margin-bottom: 10px;
+}
+  
+@media (max-width: 1200px) {
+    .ProjGalleryContainer {
+        column-count:         3;
+    }
+  }
+  @media (max-width: 1000px) {
+    .ProjGalleryContainer {
+        column-count:         2;
+    }
+  }
+  @media (max-width: 800px) {
+    .ProjGalleryContainer {
+        column-count:         1;
+    }
+  }
+  /* @media (max-width: 400px) {
+    .ProjGalleryContainer {
+        column-count:         1;
+    }
+  } */
