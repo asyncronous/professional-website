@@ -8,6 +8,7 @@ import Header from "./components/Header"
 import Navbar from "./components/Navbar"
 import Gallery from "./pages/Gallery"
 import Projects from "./pages/Projects"
+import Home from "./pages/Home"
 
 // function userReducer(state, action) {
 //   switch (action.type) {
@@ -61,6 +62,7 @@ function App() {
         <div className="ContentContainer">
           <Navbar />
           <Switch>
+          <Route exact path="/" render={(props) => <Home {...props} />} />
           <Route exact path="/blog" render={(props) => <div>blog</div>} />
           <Route exact path="/gallery" render={(props) => <Gallery {...props} />} />
           <Route exact path="/projects" render={(props) => <Projects {...props} />} />

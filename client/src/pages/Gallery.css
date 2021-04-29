@@ -10,6 +10,7 @@
 .Gallery {
     margin: 10px;
     margin-bottom: 5vh;
+    z-index: 5;
 }
 
 .GalleryElement img{

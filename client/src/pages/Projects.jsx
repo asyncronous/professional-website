@@ -13,7 +13,7 @@ import {
 import {
   disableBodyScroll,
   enableBodyScroll,
-  clearAllBodyScrollLocks,
+  // clearAllBodyScrollLocks,
 } from "body-scroll-lock";
 
 export default function Projects(props) {
@@ -28,15 +28,12 @@ export default function Projects(props) {
       <div className="ProjectElement" id={`${projects._id}`}>
         <div className="ProjectInfo">
           <div className="ProjElementTitle">
-            {/* <h5>{photo.title}</h5> */}
             {projects.title}
           </div>
           <div
             className="ProjElementContent"
             dangerouslySetInnerHTML={{ __html: projects.text }}
           >
-            {/* <p>{photo.text}</p> */}
-            {/* {photo.text} */}
           </div>
         </div>
       </div>
@@ -129,7 +126,7 @@ export default function Projects(props) {
 
   return (
     <div className="Projects">
-      <h1 className="Heading">Projects {user.loggedInUser}</h1>
+      <h1 className="Heading">Portfolio {user.loggedInUser}</h1>
       {user === false ? (
         <>
           <div>Project Uploader</div>
@@ -147,6 +144,16 @@ export default function Projects(props) {
       ) : (
         <></>
       )}
+      <div className="ProjectElement">
+        <div className="ProjectInfo">
+            <div className="ProjElementTitle">
+                App Portfolio Page 💻
+            </div>
+            <div className="ProjElementContent">
+                Here lies all of my deployed projects, most recent at the top. Each entry has a title, description, and some screenshots that you can click on to zoom in!
+            </div>
+        </div>
+      </div>
       <section className="ProjectsContainer">
         {projects === null ? (
           <></>
@@ -156,12 +163,8 @@ export default function Projects(props) {
               <ProjectElement key={key} projects={projectItem} />
               <div className="ProjGalleryContainer">
                 {projectItem.images.map((image, key) => (
-                  // <div className="GalleryElement">
-                  //   <img key={key} src={image.link}></img>
-                  // </div>
                   <>
-                    <a
-                      className="lightbox GalleryElement"
+                    <a className="lightbox GalleryElement"
                       href={`#${image._id}`}
                       onClick={(event) =>
                         disableScroll(
@@ -170,12 +173,11 @@ export default function Projects(props) {
                         )
                       }
                     >
-                      <img key={key} src={image.link}></img>
+                      <img key={key} src={image.link} alt=""></img>
                     </a>
                     <div className="lightbox-target" id={`${image._id}`}>
-                      <img key={key} src={image.link}></img>
-                      <a
-                        className="lightbox-close"
+                      <img key={key} src={image.link} alt=""></img>
+                      <a className="lightbox-close"
                         href={`#${projectItem._id}`}
                         onClick={(event) =>
                           enableScroll(
@@ -183,7 +185,7 @@ export default function Projects(props) {
                             document.querySelector(`[id='${image._id}']`)
                           )
                         }
-                      ></a>
+                      >Back</a>
                     </div>
                   </>
                 ))}

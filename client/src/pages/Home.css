@@ -1,0 +1,124 @@
+/* //---------------------//
+//------Home-Page------//
+//---------------------// */
+
+/* // colours used throughout the document
+$_1color : #D7D6D6;
+$_2color : #BEB2C8;
+$_3color : #8D8D92;
+$_3colorspecial : #8d8d9283;
+$_4color : #5D5E60;
+$_5color : #36413E;
+$_5colorspecial : #36413e8a; */
+
+/* // container for all the headings on the homepage */
+.Home{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    /* width: calc(100vw); */
+    /* height: 100vw; */
+    flex-grow: 1;
+    /* overflow-x: hidden; */
+    min-width: fit-content;
+    z-index: 5;
+}
+
+.HomeContainer{
+    display:flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: center;
+    width: 100%;
+    /* height: 100vw; */
+    /* flex-basis: 1; */
+    overflow-x: hidden;
+}
+
+/* //container for my photo on the home page, has a vignette and my photo, resized to get the right effect */
+.HeadshotContainer{
+    background: 
+        radial-gradient(transparent 0%, black 95%),
+        url("../images/Headshot.jpg");
+    background-size: 300px 300px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    border: solid rgb(104, 29, 29) 5px;
+    z-index: 9999;
+}
+
+.HomeInfo {
+    position: relative;
+    top: -40px;
+    border: 5px solid rgb(104, 29, 29);
+    background-color: rgb(104, 29, 29);
+    padding-top: 20px;
+    text-align: center;
+    /* width: 80%; */
+    border-radius: 15px;
+}
+
+.HomeTitle {
+    background-color: rgb(104, 29, 29);
+    color: #F0E9E5;
+    /* width: 100%; */
+    /* font-size: 16px; */
+    /* width: 100%; */
+    margin: 0;
+    padding: 12px 12px;
+}
+
+.HomeContent {
+    background-color: #100F21;
+    color: #F0E9E5;
+    font-size: 16px;
+    /* width: 70%; */
+
+    margin: 0;
+    padding: 16px 16px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* //each heading is moved around a bit for effect with position relative, and z-indexed to make sure its in front */
+/* #heading1{
+    font-size: 2em;
+    position: relative;
+    bottom: 55px;
+    right: 20px;
+    z-index: 2;
+}
+
+#heading2{
+    color: $_2color;
+    font-weight: 500;
+    font-size: 1.8em;
+    position: relative;
+    bottom: 50px;
+    left: 20px;
+    z-index: 2;
+}
+
+#heading3{
+    color: $_1color;
+    font-weight: 400;
+    font-size: 1.6em;
+    position: relative;
+    bottom: 40px;
+    left: 10px;
+    z-index: 2;
+}
+
+#heading4{
+    color: $_2color;
+    font-weight: 300;
+    font-size: 1.4em;
+    position: relative;
+    bottom: 30px;
+    left: 20px;
+    z-index: 2;
+} */

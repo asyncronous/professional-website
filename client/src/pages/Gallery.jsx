@@ -16,7 +16,7 @@ export default function Gallery(props) {
   const GalleryElement = ({ photo }) => {
     return (
       <div className="GalleryElement">
-        <img src={photo.images[0].link}></img>
+        <img src={photo.images[0].link} alt=""></img>
         <div className="GalleryInfo">
           <div className="ElementTitle">{photo.title}</div>
           <div
@@ -124,6 +124,16 @@ export default function Gallery(props) {
       ) : (
         <></>
       )}
+      <div className="ProjectElement">
+        <div className="ProjectInfo">
+            <div className="ProjElementTitle">
+                Amateur Photography Board 📸
+            </div>
+            <div className="ProjElementContent">
+                I post all my photos on Instagram <a href="https://www.instagram.com/bentropy.wake/" target="_blank" rel="noreferrer">here</a> but I upload some of my favourites to this page every now and then.
+            </div>
+        </div>
+      </div>
       <section className="GalleryContainer">
         {images === null ? (
           <></>

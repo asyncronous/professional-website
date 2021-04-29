@@ -36,6 +36,7 @@
     /* position: -webkit-sticky; */
     top: 5vh;
     height: 95vh;
+    
 }
 
 /* Hide Hamburger */
@@ -45,11 +46,30 @@
     box-sizing: border-box;
 }
 
-/* Horizontal Menu Items */
+/* Column Menu Items */
 #hamitems { 
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     width:100%;
+    flex: 1;
+    height: 90vh;
+    /* z-index: 99999; */
+}
+
+#hamitems .intraNav { 
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    width:100%;
+    /* z-index: 99999; */
+}
+
+#hamitems .extraNav { 
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    /* z-index: 99999; */
 }
 #hamitems a {
     /* width: calc(100% - 10px); /* 100% / 5 tabs = 20% */
@@ -59,6 +79,7 @@
     text-align: center;
     border-top: 1px solid #373E5B;
 }
+
 #hamitems a:hover {
 background: rgba(104, 29, 29, 1);
 /* display: block; */
@@ -90,8 +111,13 @@ background: rgba(104, 29, 29, 1);
     /* Toggle Show/Hide Menu */
     #hamitems { display: none; }
     #hamnav input:checked ~ #hamitems{ 
-        display: block; 
-        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width:100%;
+        flex: 1;
+        height: 85vh;
+        /* z-index: 99999; */
     }
     /* #hamnav input:checked ~ #hamitems label{ width: 100%} */
 }
