@@ -106,7 +106,7 @@ export default function Gallery(props) {
   return (
     <div className="Gallery">
       <h1 className="Heading">Gallery {user.loggedInUser}</h1>
-      {user === false ? (
+      {user === true ? (
         <>
           <div>Image Uploader</div>
           <Form

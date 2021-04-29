@@ -127,7 +127,7 @@ export default function Projects(props) {
   return (
     <div className="Projects">
       <h1 className="Heading">Portfolio {user.loggedInUser}</h1>
-      {user === false ? (
+      {user === true ? (
         <>
           <div>Project Uploader</div>
           <Form
