@@ -2,25 +2,11 @@
 //------Home-Page------//
 //---------------------// */
 
-/* // colours used throughout the document
-$_1color : #D7D6D6;
-$_2color : #BEB2C8;
-$_3color : #8D8D92;
-$_3colorspecial : #8d8d9283;
-$_4color : #5D5E60;
-$_5color : #36413E;
-$_5colorspecial : #36413e8a; */
-
 /* // container for all the headings on the homepage */
 .Home{
     display:flex;
     justify-content: center;
     align-items: center;
-    /* width: calc(100vw); */
-    /* height: 100vw; */
-    /* flex-grow: 1; */
-    /* overflow-x: hidden; */
-    /* min-width: fit-content; */
     z-index: 5;
 }
 
@@ -50,6 +36,12 @@ $_5colorspecial : #36413e8a; */
     border-radius: 50%;
     border: solid rgb(104, 29, 29) 5px;
     z-index: 9999;
+    
+    -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 1s; /* Firefox < 16 */
+    -ms-animation: fadein 1s; /* Internet Explorer */
+    -o-animation: fadein 1s; /* Opera < 12.1 */
+    animation: fadein 1s;
 }
 
 .HomeInfo {
@@ -59,16 +51,18 @@ $_5colorspecial : #36413e8a; */
     background-color: rgb(104, 29, 29);
     padding-top: 20px;
     text-align: center;
-    /* width: 80%; */
     border-radius: 15px;
+
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s;
 }
 
 .HomeTitle {
     background-color: rgb(104, 29, 29);
     color: #F0E9E5;
-    /* width: 100%; */
-    /* font-size: 16px; */
-    /* width: 100%; */
     margin: 0;
     padding: 12px 12px;
 }
@@ -77,52 +71,46 @@ $_5colorspecial : #36413e8a; */
     background-color: #100F21;
     color: #F0E9E5;
     font-size: 16px;
-    /* width: 70%; */
-
     margin: 0;
     padding: 16px 16px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
 
-/* //each heading is moved around a bit for effect with position relative, and z-indexed to make sure its in front */
-/* #heading1{
-    font-size: 2em;
-    position: relative;
-    bottom: 55px;
-    right: 20px;
-    z-index: 2;
+@keyframes fadein {
+    0% { opacity: 0; }
+    50%   { opacity: 0; }
+    100%   { opacity: 1; }
 }
 
-#heading2{
-    color: $_2color;
-    font-weight: 500;
-    font-size: 1.8em;
-    position: relative;
-    bottom: 50px;
-    left: 20px;
-    z-index: 2;
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    0% { opacity: 0; }
+    50%   { opacity: 0; }
+    100%   { opacity: 1; }
 }
 
-#heading3{
-    color: $_1color;
-    font-weight: 400;
-    font-size: 1.6em;
-    position: relative;
-    bottom: 40px;
-    left: 10px;
-    z-index: 2;
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    0% { opacity: 0; }
+    50%   { opacity: 0; }
+    100%   { opacity: 1; }
 }
 
-#heading4{
-    color: $_2color;
-    font-weight: 300;
-    font-size: 1.4em;
-    position: relative;
-    bottom: 30px;
-    left: 20px;
-    z-index: 2;
-} */
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    0% { opacity: 0; }
+    50%   { opacity: 0; }
+    100%   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    0% { opacity: 0; }
+    50%   { opacity: 0; }
+    100%   { opacity: 1; }
+}
+
 @media (max-width: 500px){
     h1{
         font-size: 20px;
