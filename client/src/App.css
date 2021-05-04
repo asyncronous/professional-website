@@ -1,6 +1,7 @@
 *{
   color: #F0E8E5;
   overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 html,body

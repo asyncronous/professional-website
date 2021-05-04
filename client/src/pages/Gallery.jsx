@@ -136,12 +136,10 @@ export default function Gallery(props) {
       </div>
       <section className="GalleryContainer">
         {images === null ? (
-          <></>
+          <div><h2>Loading Gallery...</h2></div>
         ) : (
           images.map((imageItem, key) => (
-            // <LazyLoad key={key} placeholder={<div><h5>Loading...</h5></div>}>
                 <GalleryElement key={key} photo={imageItem} />
-            // </LazyLoad>
           ))
         )}
         <span class="GalleryElement break"></span>
