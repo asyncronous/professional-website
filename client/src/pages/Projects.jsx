@@ -1,4 +1,3 @@
-// import { Link } from 'react-router-dom'
 import "./Projects.css";
 import "./Gallery.css";
 import "./Lightbox.css";
@@ -10,14 +9,11 @@ import {
   useEffect, 
   useContext 
 } from "react";
-import {
-  disableBodyScroll,
-  enableBodyScroll,
-  // clearAllBodyScrollLocks,
-} from "body-scroll-lock";
+import fscreen from 'fscreen';
 
 export default function Projects(props) {
   const [projects, setProjects] = useState(null);
+  const [isFullScreen, setFullScreen] = useState(fscreen.fullscreenElement);
 
   const user = useContext(UserContext);
   const fileInput = React.useRef();
@@ -38,15 +34,6 @@ export default function Projects(props) {
         </div>
       </div>
     );
-  };
-
-  const disableScroll = (e, target) => {
-    // e.preventDefault()
-    disableBodyScroll(target);
-  };
-  const enableScroll = (e, target) => {
-    // e.preventDefault()
-    enableBodyScroll(target);
   };
 
   const handleUpload = (event, form) => {
@@ -105,24 +92,32 @@ export default function Projects(props) {
       },
     })
       .then((result) => {
-        //   if (!result.ok) { throw result }
         return result.json();
       })
       .then((data) => {
         setProjects(data.reverse());
-        //   setErrors([])
-        console.log(data);
-        console.log(user);
+        //console.log(data);
+        //console.log(user);
       })
       .catch((error) => {
-        //   error.json()
-        //   .then(data => {
-        //     console.log(data.error)
-        //     // setErrors(data.error)
-        //   })
         console.log("Error");
       });
   }, []);
+
+  const openFullscreen = ((key) => {
+    let elem = document.getElementById(`${key}`)
+
+    console.log(fscreen.fullscreenElement)
+
+    if (!fscreen.fullscreenElement) {
+      fscreen.requestFullscreen(elem);
+      setFullScreen(true)
+    }
+    else {
+      fscreen.exitFullscreen();
+      setFullScreen(false)
+    }
+  });
 
   return (
     <div className="Projects">
@@ -150,7 +145,7 @@ export default function Projects(props) {
                 App Portfolio Page 💻
             </div>
             <div className="ProjElementContent">
-                Here lies all of my deployed projects, most recent at the top. Each entry has a title, description, and some screenshots that you can click on to zoom in!
+                Here are all of my personal dev projects, most recent at the top. Links to code and deployed sites where applicable. Click the images to fullscreen them. 📸
             </div>
         </div>
       </div>
@@ -164,29 +159,9 @@ export default function Projects(props) {
               <div className="ProjGalleryContainer">
                 {projectItem.images.map((image, key) => (
                   <>
-                    <a className="lightbox GalleryElement"
-                      href={`#${image._id}`}
-                      onClick={(event) =>
-                        disableScroll(
-                          event,
-                          document.querySelector(`[id='${image._id}']`)
-                        )
-                      }
-                    >
-                      <img key={key} src={image.link} alt=""></img>
-                    </a>
-                    <div className="lightbox-target" id={`${image._id}`}>
-                      <img key={key} src={image.link} alt=""></img>
-                      <a className="lightbox-close"
-                        href={`#${projectItem._id}`}
-                        onClick={(event) =>
-                          enableScroll(
-                            event,
-                            document.querySelector(`[id='${image._id}']`)
-                          )
-                        }
-                      >Back</a>
-                    </div>
+                    <span className={"GalleryElement " + (isFullScreen ? 'disabled' : 'enabled')} >
+                      <img onClick={() => openFullscreen(image.link)} id={image.link} key={key} src={image.link} alt=""></img>
+                    </span>
                   </>
                 ))}
               </div>

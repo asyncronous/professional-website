@@ -10,13 +10,6 @@ export default function Form({handleSubmit, formFields, formTypes, multiple, ref
             newFormData[field] = defaultValue[index] == null ? "" : defaultValue[index]
         })
 
-        // if(jobId){
-        //     newFormData["jobId"] = jobId
-        // }
-        // if(stageId || stageId === 0){
-        //     newFormData["stageId"] = stageId 
-        // }
-
         setFormData(newFormData)
     }, [defaultValue])
 

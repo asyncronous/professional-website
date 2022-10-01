@@ -41,7 +41,7 @@
     height: 4000px;
 }
 
-.GalleryElement:hover img {
+.GalleryElement:hover:not([class*=" disabled"]) img {
     opacity: 0.3;
 }
   
@@ -72,6 +72,10 @@
     background-color: #760419;
     color: #F0E9E5;
     font-size: 16px;
+}
+
+.ElementContent a:hover {
+    color: #F40D01;
 }
 
 .Spacer {

@@ -14,9 +14,13 @@ const AWS = require('aws-sdk');
 const ID = process.env.AWS_ID
 const SECRET = process.env.AWS_SECRET
 const BUCKET_NAME = process.env.AWS_BUCKET
+const CAN_POST = process.env.CAN_POST
 
 //upload image/s
 router.post("/upload", (req, res) => {
+    if (!CAN_POST){
+        return
+    }
 
     //console logs for debug to check existence of files in upload
     console.log(req.files)
@@ -127,6 +131,13 @@ router.get("/projects", (request, response) => {
             console.log(error)
             response.status(400).send({"error": "Something wrong CREATE"})
         })
+})
+
+//gets if can post
+router.get("/canpost", (request, response) => {
+    console.log(`Checking if Can Post? ${CAN_POST}`)
+
+    response.send({"can_post": CAN_POST})
 })
 
 //create new post

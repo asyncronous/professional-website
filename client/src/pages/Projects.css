@@ -101,6 +101,10 @@
     padding: 16px 16px;
 }
 
+.ProjElementContent a:hover {
+    color: #F40D01;
+}
+
 .Spacer {
     margin-bottom: 10px;
 }

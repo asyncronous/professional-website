@@ -18,36 +18,34 @@ import {Link} from 'react-router-dom'
             {/* <!-- [MENU ITEMS] --> */}
             <div id="hamitems">
                 <div className="intraNav">
-                    <Link to="/" className="nav-link" id="signup">Home</Link>
-                    <Link to="/projects" className="nav-link" id="signup">Portfolio</Link>
-                    <Link to="/gallery" className="nav-link" id="signup">Gallery</Link>
-                    {/* <Link to="/book" className="nav-link" id="signup">WebSerial</Link> */}
-                    <Link to="/gamedev" className="nav-link" id="signup">GameDev</Link>
-                    <Link to="/about" className="nav-link" id="signup">About</Link>
-                    {/* <Link to="/contact" className="nav-link" id="signup">Contact</Link> */}
-
+                    <Link to="/" className="nav-link">Home</Link>
+                    <a href="https://www.torcularis.dev" className="nav-link" target="_blank" rel="noreferrer">Game</a>
+                    <Link to="/book" className="nav-link">Story</Link>
+                    <Link to="/projects" className="nav-link">Portfolio</Link>
+                    <Link to="/gallery" className="nav-link">Gallery</Link>
+                    <a href="BenjaminWakefield-Resume.pdf" target="_blank">Resume</a>
+                    <Link to="/about" className="nav-link">About</Link>
                 </div>
                 <div className="extraNav">
-
-                <a href="https://www.linkedin.com/in/benjamin-wakefield-569143159/" target="_blank" rel="noreferrer">
-                    <img style={{width: "35px", padding: "0"}} className="nav-link" src="linkedin-128.png" alt="linkedin icon"/>
-                </a>
-                <a href="https://github.com/asyncronous" target="_blank" rel="noreferrer">
-                    <img style={{width: "35px"}} className="nav-link" src="/github-10-128.ico" alt="Github icon"/>
-                </a>
-                {/* <a href="https://codepen.io/asyncronous" target="_blank" rel="noreferrer">
-                    <img style={{width: "40px", margin: "0"}} className="nav-link" src="/codepen-128.png" alt="Codepen icon"/>
-                </a> */}
-                <a href="https://twitter.com/Asyncronous14" target="_blank" rel="noreferrer">
-                    <img style={{width: "35px"}} className="nav-link" src="/twitter-5-128.ico" alt="Twitter icon"/>
-                </a>
-                <a href="https://www.instagram.com/bentropy.wake/" target="_blank" rel="noreferrer">
-                    <img style={{width: "35px"}} className="nav-link" src="/instagram-5-128.ico" alt="instagram icon"/>
-                </a>
-                <a href="mailto:bwakefield34@gmail.com" target="_blank" rel="noreferrer">
-                    <img style={{width: "35px"}} className="nav-link" src="/gmail-128.png" alt="gmail icon"/>
-                </a>
-                    </div>
+                    <a href="https://www.linkedin.com/in/benjamin-wakefield-569143159/" target="_blank" rel="noreferrer">
+                        <img style={{width: "35px", padding: "0"}} className="nav-link" src="linkedin-128.png" alt="linkedin icon"/>
+                    </a>
+                    <a href="https://github.com/asyncronous" target="_blank" rel="noreferrer">
+                        <img style={{width: "35px"}} className="nav-link" src="/github-10-128.ico" alt="Github icon"/>
+                    </a>
+                    {/* <a href="https://codepen.io/asyncronous" target="_blank" rel="noreferrer">
+                        <img style={{width: "40px", margin: "0"}} className="nav-link" src="/codepen-128.png" alt="Codepen icon"/>
+                    </a> */}
+                    <a href="https://twitter.com/Asyncronous14" target="_blank" rel="noreferrer">
+                        <img style={{width: "35px"}} className="nav-link" src="/twitter-5-128.ico" alt="Twitter icon"/>
+                    </a>
+                    <a href="https://www.instagram.com/bentropy.wake/" target="_blank" rel="noreferrer">
+                        <img style={{width: "35px"}} className="nav-link" src="/instagram-5-128.ico" alt="instagram icon"/>
+                    </a>
+                    <a href="mailto:bwakefield34@gmail.com" target="_blank" rel="noreferrer">
+                        <img style={{width: "35px"}} className="nav-link" src="/gmail-128.png" alt="gmail icon"/>
+                    </a>
+                </div>
             </div>
         </nav>
     )

@@ -42,7 +42,7 @@ var style = {
             <div style={phantom} />
             <div style={style}>
               <header className="Component">
-                <h3>Benjamin Wakefield;</h3>
+                <h3>bwake.dev</h3>
               </header>
             </div>
         </div>

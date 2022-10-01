@@ -98,3 +98,7 @@ html,body
 .ContentContainer > div {
   flex: 1;
 }
+
+.HyperGold:hover {
+  color: #F40D01;
+}

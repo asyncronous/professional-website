@@ -1,10 +1,8 @@
-// import { Link } from 'react-router-dom'
 import "./Gallery.css";
 import UserContext from "../components/UserContext";
 import Form from "../components/Form";
 import React from "react";
 import { useState, useEffect, useContext } from "react";
-import LazyLoad from "react-lazyload"
 
 export default function Gallery(props) {
   const [images, setImages] = useState(null);
@@ -84,21 +82,14 @@ export default function Gallery(props) {
       },
     })
       .then((result) => {
-        //   if (!result.ok) { throw result }
         return result.json();
       })
       .then((data) => {
         setImages(data.reverse());
-        //   setErrors([])
-        console.log(data);
-        console.log(user);
+        //console.log(data);
+        //console.log(user);
       })
       .catch((error) => {
-        //   error.json()
-        //   .then(data => {
-        //     console.log(data.error)
-        //     // setErrors(data.error)
-        //   })
         console.log("Error");
       });
   }, []);
@@ -110,7 +101,6 @@ export default function Gallery(props) {
         <>
           <div>Image Uploader</div>
           <Form
-            className="DarkText"
             handleSubmit={handleUpload}
             formFields={["title", "text", "images"]}
             formTypes={["text", "textarea", "file"]}
@@ -130,7 +120,7 @@ export default function Gallery(props) {
                 Amateur Photography Board 📸
             </div>
             <div className="ProjElementContent">
-                I post all my photos on Instagram <a href="https://www.instagram.com/bentropy.wake/" target="_blank" rel="noreferrer">here</a> but I upload some of my favourites to this page every now and then.
+                I post all my photos on Instagram <a className="HyperGold" href="https://www.instagram.com/bentropy.wake/" target="_blank" rel="noreferrer">here</a> but I upload some of my favourites to this page every now and then.
             </div>
         </div>
       </div>

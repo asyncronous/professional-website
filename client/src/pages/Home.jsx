@@ -1,59 +1,24 @@
-// import { Link } from 'react-router-dom'
 import "./Home.css";
+import {Link} from 'react-router-dom'
 import "../components/FallingLeaves.css";
-import UserContext from "../components/UserContext";
-
 import React from "react";
-import { 
-  useState, 
-  useEffect, 
-  useContext 
-} from "react";
 
-export default function Projects(props) {
-  const [projects, setProjects] = useState(null);
-
-  const user = useContext(UserContext);
-  const fileInput = React.useRef();
-  const dummyRef = React.useRef();
-
+export default function Projects() {
   return (
     <div className="Home">
-      {/* <h1 className="Heading">Portfolio {user.loggedInUser}</h1> */}
-      {/* <div className="HomeContainer">
-      </div> */}
       <div className="HomeContainer">
         <section className="HeadshotContainer">
         </section>
         <div className="HomeInfo">
-                <h1 className="HomeTitle">
-                    Benjamin Wakefield
-                </h1>
-                {/* <h1 className="HomeTitle" style={{fontSize: "16px"}}>
-                    Junior Full Stack Developer | 
-                    Unity Dev | 
-                    Photographer
-                </h1> */}
-                <h2 className="HomeContent">
-                Junior Full Stack Developer | 
-                    Unity Dev | 
-                    Amateur Writer & Photographer
-                </h2>
+          <h1 className="HomeTitle">
+            bwake.dev
+          </h1>
+          <h2 className="HomeContent">
+            <Link to="/about" className="HyperGold nav-link">Software Engineer | Part Time Game Developer | Amateur Writer & Photographer</Link>
+          </h2>
         </div>
       </div>
       <div className="fallingLeaves">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-
-          
-
-          <span></span>
           <span></span>
           <span></span>
           <span></span>
