@@ -85,8 +85,8 @@ export default function Gallery(props) {
         return result.json();
       })
       .then((data) => {
-        setImages(data.reverse());
-        //console.log(data);
+        setImages(data.sort((a, b) => (a._id < b._id) ? 1 : -1));
+        console.log(data);
         //console.log(user);
       })
       .catch((error) => {

@@ -8,6 +8,19 @@ import Entry from './Entry';
 function App() {
   const [loggedInUser, setLoggedInUser] = useState(false) 
 
+  const [imageIsLoading, setImageIsLoading] = useState(true);
+  const [image, setImage] = useState({});
+  const handleImageLoaded = () => {
+    setImageIsLoading(false)
+  };
+
+  useEffect(() => {
+    const image = new Image();
+    image.onload = handleImageLoaded;
+    image.src = "https://prof-website.s3-ap-southeast-2.amazonaws.com/background.jpg";
+    setImage(image);
+  }, [imageIsLoading]);
+
   useEffect(() => {
     fetch('/api/posts/canpost', {
       method: "GET",
@@ -23,11 +36,11 @@ function App() {
 
   return (
     <UserProvider value={loggedInUser}>
-    <div className="Container">
-      <BrowserRouter > 
-        <Entry />
-      </BrowserRouter>
-    </div>
+      <div className="Container">
+        <BrowserRouter > 
+          <Entry />
+        </BrowserRouter>
+      </div>
     </UserProvider>
   );
 }

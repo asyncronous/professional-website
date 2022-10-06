@@ -22,6 +22,16 @@
     overflow-x: hidden;
 }
 
+.bg-lazy {
+    /* height: 100vh;
+    width: 100vw; */
+    transition: opacity 1s ease-out;
+}
+
+.bg-loading {
+    opacity: 0;
+}
+
 /* //container for my photo on the home page, has a vignette and my photo, resized to get the right effect */
 .HeadshotContainer{
     background: 
@@ -36,12 +46,6 @@
     border-radius: 50%;
     border: solid rgb(104, 29, 29) 5px;
     z-index: 9999;
-    
-    -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
-    -moz-animation: fadein 1s; /* Firefox < 16 */
-    -ms-animation: fadein 1s; /* Internet Explorer */
-    -o-animation: fadein 1s; /* Opera < 12.1 */
-    animation: fadein 1s;
 }
 
 .HomeInfo {
@@ -53,11 +57,11 @@
     text-align: center;
     border-radius: 15px;
 
-    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadein 2s; /* Firefox < 16 */
-        -ms-animation: fadein 2s; /* Internet Explorer */
-         -o-animation: fadein 2s; /* Opera < 12.1 */
-            animation: fadein 2s;
+    -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 1s; /* Firefox < 16 */
+        -ms-animation: fadein 1s; /* Internet Explorer */
+         -o-animation: fadein 1s; /* Opera < 12.1 */
+            animation: fadein 1s;
 }
 
 .HomeTitle {

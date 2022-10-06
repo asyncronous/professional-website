@@ -1,20 +1,4 @@
-// // import { Link } from 'react-router-dom'
 import './Component.css'; 
-
-// export default function Header(props) {
-//     return (
-//         <header className="Component"> Header </header>
-//     );
-// }
-
-// // import { Link } from 'react-router-dom'
-// import './Component.css'; 
-
-// export default function Footer(props) {
-//   return (
-//     <footer className="Component"> Footer </footer>
-//   );
-// }
 
 var style = {
     backgroundColor: "#F8F8F8",

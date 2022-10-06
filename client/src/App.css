@@ -67,6 +67,17 @@ html,body
   flex-basis: 1;
 }
 
+.cont-lazy {
+  /* height: 100vh;
+  width: 100vw; */
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+.cont-loading {
+  opacity: 1;
+}
+
 .Container:before {
   background-image: url("https://prof-website.s3-ap-southeast-2.amazonaws.com/background.jpg");
   content: ' ';

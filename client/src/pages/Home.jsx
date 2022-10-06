@@ -1,14 +1,31 @@
 import "./Home.css";
 import {Link} from 'react-router-dom'
 import "../components/FallingLeaves.css";
-import React from "react";
+import { 
+  useRef,
+  useEffect, 
+  useState,
+  React 
+} from "react";
 
 export default function Projects() {
+  const [imageIsLoading, setImageIsLoading] = useState(true);
+  const [image, setImage] = useState({});
+  const handleImageLoaded = () => {
+    setImageIsLoading(false)
+  };
+
+  useEffect(() => {
+    const image = new Image();
+    image.onload = handleImageLoaded;
+    image.src = "Headshot.jpg";
+    setImage(image);
+  }, [imageIsLoading]);
+
   return (
     <div className="Home">
       <div className="HomeContainer">
-        <section className="HeadshotContainer">
-        </section>
+        <section className={"HeadshotContainer " + (imageIsLoading ? 'bg-loading' : 'bg-lazy')}></section>
         <div className="HomeInfo">
           <h1 className="HomeTitle">
             bwake.dev

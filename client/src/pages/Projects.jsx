@@ -95,7 +95,8 @@ export default function Projects(props) {
         return result.json();
       })
       .then((data) => {
-        setProjects(data.reverse());
+        setProjects(data.sort((a, b) => (a._id < b._id) ? 1 : -1));
+
         //console.log(data);
         //console.log(user);
       })
