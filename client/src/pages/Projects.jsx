@@ -14,10 +14,22 @@ import fscreen from 'fscreen';
 export default function Projects(props) {
   const [projects, setProjects] = useState(null);
   const [isFullScreen, setFullScreen] = useState(fscreen.fullscreenElement);
+  const [imageIsLoading, setImageIsLoading] = useState(true);
 
   const user = useContext(UserContext);
   const fileInput = React.useRef();
   const dummyRef = React.useRef();
+
+  let imageCount = 0;
+  let dataCount = 0;
+  const handleImageLoaded = () => {
+    imageCount += 1;
+
+    if (imageCount >= dataCount) {
+      console.log("Projects Loaded")
+      setImageIsLoading(false)
+    }
+  };
 
   const ProjectElement = ({ projects }) => {
     return (
@@ -95,10 +107,17 @@ export default function Projects(props) {
         return result.json();
       })
       .then((data) => {
-        setProjects(data.sort((a, b) => (a._id < b._id) ? 1 : -1));
+        const projList = data.sort((a, b) => (a._id < b._id) ? 1 : -1);
+        const projImages = projList.map(proj => proj.images).flat();
+        dataCount = projImages.length;
+        setProjects(projList);
 
-        //console.log(data);
-        //console.log(user);
+        projImages.forEach((img) => {
+          const image = new Image();
+          image.onload = handleImageLoaded;
+          image.src = img.link;
+        });
+
       })
       .catch((error) => {
         console.log("Error");
@@ -107,8 +126,6 @@ export default function Projects(props) {
 
   const openFullscreen = ((key) => {
     let elem = document.getElementById(`${key}`)
-
-    console.log(fscreen.fullscreenElement)
 
     if (!fscreen.fullscreenElement) {
       fscreen.requestFullscreen(elem);
@@ -150,26 +167,26 @@ export default function Projects(props) {
             </div>
         </div>
       </div>
-      <section className="ProjectsContainer">
-        {projects === null ? (
+        {imageIsLoading ? (
           <></>
         ) : (
-          projects.map((projectItem, key) => (
-            <>
-              <ProjectElement key={key} projects={projectItem} />
-              <div className="ProjGalleryContainer">
-                {projectItem.images.map((image, key) => (
-                  <>
-                    <span className={"GalleryElement " + (isFullScreen ? 'disabled' : 'enabled')} >
-                      <img onClick={() => openFullscreen(image.link)} id={image.link} key={key} src={image.link} alt=""></img>
-                    </span>
-                  </>
-                ))}
-              </div>
-            </>
-          ))
+          <section className="ProjectsContainer">
+            {projects.map((projectItem, key) => (
+              <>
+                <ProjectElement key={key} projects={projectItem} />
+                <div className="ProjGalleryContainer">
+                  {projectItem.images.map((image, key) => (
+                    <>
+                      <span className={"GalleryElement " + (isFullScreen ? 'disabled' : 'enabled')} >
+                        <img onClick={() => openFullscreen(image.link)} id={image.link} key={key} src={image.link} alt=""></img>
+                      </span>
+                    </>
+                  ))}
+                </div>
+              </>
+            ))}
+          </section>
         )}
-      </section>
     </div>
   );
 }
