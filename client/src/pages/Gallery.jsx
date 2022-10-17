@@ -114,49 +114,52 @@ export default function Gallery(props) {
   }, []);
 
   return (
-    <div className="Gallery">
-      <h1 className="Heading">Gallery {user.loggedInUser}</h1>
-      {user === true ? (
-        <>
-          <div>Image Uploader</div>
-          <Form
-            handleSubmit={handleUpload}
-            formFields={["title", "text", "images"]}
-            formTypes={["text", "textarea", "file"]}
-            multiple={[false, false, true]}
-            refers={[dummyRef, dummyRef, fileInput]}
-            defaultValue={[null, null, null]}
-            title="Upload!"
-          />
-          <div className="Spacer"></div>
-        </>
-      ) : (
+    <>
+      {imageIsLoading ? (
         <></>
-      )}
-      <div className="ProjectElement">
-        <div className="ProjectInfo">
-            <div className="ProjElementTitle">
-                Amateur Photography Board 📸
+      ) : (
+        <div className="Gallery">
+          <h1 className="Heading">Gallery {user.loggedInUser}</h1>
+          {user === true ? (
+            <>
+              <div>Image Uploader</div>
+              <Form
+                handleSubmit={handleUpload}
+                formFields={["title", "text", "images"]}
+                formTypes={["text", "textarea", "file"]}
+                multiple={[false, false, true]}
+                refers={[dummyRef, dummyRef, fileInput]}
+                defaultValue={[null, null, null]}
+                title="Upload!"
+              />
+              <div className="Spacer"></div>
+            </>
+          ) : (
+            <></>
+          )}
+          <div className="ProjectElement">
+            <div className="ProjectInfo">
+                <div className="ProjElementTitle">
+                    Amateur Photography Board 📸
+                </div>
+                <div className="ProjElementContent">
+                    I post all my photos on Instagram <a className="HyperGold" href="https://www.instagram.com/bentropy.wake/" target="_blank" rel="noreferrer">here</a> but I upload some of my favourites to this page every now and then.
+                </div>
             </div>
-            <div className="ProjElementContent">
-                I post all my photos on Instagram <a className="HyperGold" href="https://www.instagram.com/bentropy.wake/" target="_blank" rel="noreferrer">here</a> but I upload some of my favourites to this page every now and then.
-            </div>
+          </div>
+          <section className="GalleryContainer">
+            {images.map((imageItem, key) => (
+                <GalleryElement key={key} photo={imageItem} />
+            ))}
+            <span class="GalleryElement break"></span>
+            <span class="GalleryElement break"></span>
+            <span class="GalleryElement break"></span>
+            <span class="GalleryElement break"></span>
+            <span class="GalleryElement break"></span>
+          </section>
         </div>
-      </div>
-      <section className="GalleryContainer">
-        {imageIsLoading ? (
-          <div><h2>Loading Gallery...</h2></div>
-        ) : (
-          images.map((imageItem, key) => (
-            <GalleryElement key={key} photo={imageItem} />
-          ))
-        )}
-        <span class="GalleryElement break"></span>
-        <span class="GalleryElement break"></span>
-        <span class="GalleryElement break"></span>
-        <span class="GalleryElement break"></span>
-        <span class="GalleryElement break"></span>
-      </section>
-    </div>
+      )}
+    </>
+    
   );
 }
