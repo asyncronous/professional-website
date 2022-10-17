@@ -36,11 +36,16 @@ function App() {
 
   return (
     <UserProvider value={loggedInUser}>
-      <div className="Container">
-        <BrowserRouter > 
-          <Entry />
-        </BrowserRouter>
-      </div>
+      {imageIsLoading ? (
+        <>
+        </> 
+      ) : (
+        <div className="Container">
+          <BrowserRouter > 
+            <Entry loaded={imageIsLoading}/>
+          </BrowserRouter>
+        </div>
+      )}
     </UserProvider>
   );
 }

@@ -167,26 +167,26 @@ export default function Projects(props) {
             </div>
         </div>
       </div>
-        {imageIsLoading ? (
-          <></>
-        ) : (
-          <section className="ProjectsContainer">
-            {projects.map((projectItem, key) => (
-              <>
-                <ProjectElement key={key} projects={projectItem} />
-                <div className="ProjGalleryContainer">
-                  {projectItem.images.map((image, key) => (
-                    <>
-                      <span className={"GalleryElement " + (isFullScreen ? 'disabled' : 'enabled')} >
-                        <img onClick={() => openFullscreen(image.link)} id={image.link} key={key} src={image.link} alt=""></img>
-                      </span>
-                    </>
-                  ))}
-                </div>
-              </>
-            ))}
-          </section>
-        )}
+      {imageIsLoading ? (
+        <></>
+      ) : (
+        <section className="ProjectsContainer">
+          {projects.map((projectItem, key) => (
+            <>
+              <ProjectElement key={key} projects={projectItem} />
+              <div className="ProjGalleryContainer">
+                {projectItem.images.map((image, key) => (
+                  <>
+                    <span className={"GalleryElement " + (isFullScreen ? 'disabled' : 'enabled')} >
+                      <img onClick={() => openFullscreen(image.link)} id={image.link} key={key} src={image.link} alt=""></img>
+                    </span>
+                  </>
+                ))}
+              </div>
+            </>
+          ))}
+        </section>
+      )}
     </div>
   );
 }
