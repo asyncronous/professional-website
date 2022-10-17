@@ -6,10 +6,22 @@ import { useState, useEffect, useContext } from "react";
 
 export default function Gallery(props) {
   const [images, setImages] = useState(null);
+  const [imageIsLoading, setImageIsLoading] = useState(true);
 
   const user = useContext(UserContext);
   const fileInput = React.useRef();
   const dummyRef = React.useRef();
+
+  let imageCount = 0;
+  let dataCount = 0;
+  const handleImageLoaded = () => {
+    imageCount += 1;
+
+    if (imageCount >= dataCount) {
+      console.log("Gallery Loaded")
+      setImageIsLoading(false)
+    }
+  };
 
   const GalleryElement = ({ photo }) => {
     return (
@@ -85,9 +97,16 @@ export default function Gallery(props) {
         return result.json();
       })
       .then((data) => {
-        setImages(data.sort((a, b) => (a._id < b._id) ? 1 : -1));
-        console.log(data);
-        //console.log(user);
+
+        const imgList = data.sort((a, b) => (a._id < b._id) ? 1 : -1);
+        dataCount = imgList.length;
+        setImages(imgList);
+
+        imgList.forEach((img) => {
+          const image = new Image();
+          image.onload = handleImageLoaded;
+          image.src = img.images[0].link;
+        });
       })
       .catch((error) => {
         console.log("Error");
@@ -125,11 +144,11 @@ export default function Gallery(props) {
         </div>
       </div>
       <section className="GalleryContainer">
-        {images === null ? (
+        {imageIsLoading ? (
           <div><h2>Loading Gallery...</h2></div>
         ) : (
           images.map((imageItem, key) => (
-                <GalleryElement key={key} photo={imageItem} />
+            <GalleryElement key={key} photo={imageItem} />
           ))
         )}
         <span class="GalleryElement break"></span>

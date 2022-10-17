@@ -2,7 +2,6 @@ import "./Home.css";
 import {Link} from 'react-router-dom'
 import "../components/FallingLeaves.css";
 import { 
-  useRef,
   useEffect, 
   useState,
   React 
@@ -16,10 +15,10 @@ export default function Projects() {
   };
 
   useEffect(() => {
-    const image = new Image();
-    image.onload = handleImageLoaded;
-    image.src = "Headshot.jpg";
-    setImage(image);
+    const img = new Image();
+    img.onload = handleImageLoaded;
+    img.src = "Headshot.jpg";
+    setImage(img);
   }, [imageIsLoading]);
 
   return (
