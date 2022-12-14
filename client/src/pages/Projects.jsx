@@ -1,6 +1,7 @@
 import "./Projects.css";
 import "./Gallery.css";
 import "./Lightbox.css";
+import "../components/Loading.css";
 import UserContext from "../components/UserContext";
 import Form from "../components/Form";
 import React from "react";
@@ -22,6 +23,7 @@ export default function Projects(props) {
 
   let imageCount = 0;
   let dataCount = 0;
+
   const handleImageLoaded = () => {
     imageCount += 1;
 
@@ -168,7 +170,14 @@ export default function Projects(props) {
         </div>
       </div>
       {imageIsLoading ? (
-        <></>
+        <div class="LoadingContainer">
+          <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
       ) : (
         <section className="ProjectsContainer">
           {projects.map((projectItem, key) => (

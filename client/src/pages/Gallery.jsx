@@ -1,4 +1,5 @@
 import "./Gallery.css";
+import "../components/Loading.css";
 import UserContext from "../components/UserContext";
 import Form from "../components/Form";
 import React from "react";
@@ -14,6 +15,7 @@ export default function Gallery(props) {
 
   let imageCount = 0;
   let dataCount = 0;
+
   const handleImageLoaded = () => {
     imageCount += 1;
 
@@ -115,48 +117,55 @@ export default function Gallery(props) {
 
   return (
     <div className="Gallery">
-        <h1 className="Heading">Gallery {user.loggedInUser}</h1>
-        {user === true ? (
-          <>
-            <div>Image Uploader</div>
-            <Form
-              handleSubmit={handleUpload}
-              formFields={["title", "text", "images"]}
-              formTypes={["text", "textarea", "file"]}
-              multiple={[false, false, true]}
-              refers={[dummyRef, dummyRef, fileInput]}
-              defaultValue={[null, null, null]}
-              title="Upload!"
-            />
-            <div className="Spacer"></div>
-          </>
-        ) : (
-          <></>
-        )}
-        <div className="ProjectElement">
-          <div className="ProjectInfo">
-              <div className="ProjElementTitle">
-                  Amateur Photography Board 📸
-              </div>
-              <div className="ProjElementContent">
-                  I post all my photos on Instagram <a className="HyperGold" href="https://www.instagram.com/bentropy.wake/" target="_blank" rel="noreferrer">here</a> but I upload some of my favourites to this page every now and then.
-              </div>
+      <h1 className="Heading">Gallery {user.loggedInUser}</h1>
+      {user === true ? (
+        <>
+          <div>Image Uploader</div>
+          <Form
+            handleSubmit={handleUpload}
+            formFields={["title", "text", "images"]}
+            formTypes={["text", "textarea", "file"]}
+            multiple={[false, false, true]}
+            refers={[dummyRef, dummyRef, fileInput]}
+            defaultValue={[null, null, null]}
+            title="Upload!"
+          />
+          <div className="Spacer"></div>
+        </>
+      ) : (
+        <></>
+      )}
+      <div className="ProjectElement">
+        <div className="ProjectInfo">
+            <div className="ProjElementTitle">
+                Amateur Photography Board 📸
+            </div>
+            <div className="ProjElementContent">
+                I post all my photos on Instagram <a className="HyperGold" href="https://www.instagram.com/bentropy.wake/" target="_blank" rel="noreferrer">here</a> but I upload some of my favourites to this page every now and then.
+            </div>
+        </div>
+      </div>
+      {imageIsLoading ? (
+        <div class="LoadingContainer">
+          <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
           </div>
         </div>
-    {imageIsLoading ? (
-      <></>
-    ) : (
-      <section className="GalleryContainer">
-        {images.map((imageItem, key) => (
-            <GalleryElement key={key} photo={imageItem} />
-        ))}
-        <span class="GalleryElement break"></span>
-        <span class="GalleryElement break"></span>
-        <span class="GalleryElement break"></span>
-        <span class="GalleryElement break"></span>
-        <span class="GalleryElement break"></span>
-      </section>
-    )}
+      ) : (
+        <section className="GalleryContainer">
+          {images.map((imageItem, key) => (
+              <GalleryElement key={key} photo={imageItem} />
+          ))}
+          <span class="GalleryElement break"></span>
+          <span class="GalleryElement break"></span>
+          <span class="GalleryElement break"></span>
+          <span class="GalleryElement break"></span>
+          <span class="GalleryElement break"></span>
+        </section>
+      )}
     </div>
   );
 }
