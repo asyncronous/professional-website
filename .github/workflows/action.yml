@@ -39,9 +39,6 @@ jobs:
         run: |
           gcloud run deploy ghcr \
             --image=${{ secrets.GCP_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/prof-website/asyncronous/professionalwebsite:${{ github.sha }} \
-            --region=${{ secrets.GCP_REGION }} \
+            --region=asia-southeast1 \
             --project=${{ secrets.GCP_PROJECT_ID }} \
-            --platform=managed
-
-# Replace <REPOSITORY>, <IMAGE>, and <SERVICE_NAME> with your actual values.
-# Make sure to add GCP_PROJECT_ID, GCP_REGION, and GCP_SERVICE_KEY secrets to your repository.
+            --allow-unauthenticated
