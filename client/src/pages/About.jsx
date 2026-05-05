@@ -15,7 +15,7 @@ export default function Projects() {
                 <a className="HyperGold" href="https://youtu.be/gKQOXYB2cd8?t=4" target="_blank" rel="noreferrer">Who do you think you are, I am!?</a>
             </div>
             <div className="ProjElementContent">
-                Hi! I’m Ben, a Software Engineer passionate about building scalable solutions and modernising platforms 👨‍💻
+                Hi! I'm Ben, a Software Engineer passionate about building scalable solutions and modernising platforms 👨‍💻
                 <div class="h-divider">
                     <div class="shadow"></div>
                 </div> 
@@ -29,21 +29,22 @@ export default function Projects() {
                     <li>Cypress, Mocha/Chai</li>
                     <li>MongoDB, PostgreSQL</li>
                 </ul>
-                Since 2020, I’ve been working full time as a Software Engineer, with several years at Domino’s. My work there has focused on backend .NET microservices, cloud migrations (Azure, AWS), DevOps automation, and global platform modernisation. I’ve led projects upgrading legacy systems to .NET 6/8, automated translation workflows, built SQL deployment pipelines, and enabled cross-team adoption of new tools. My experience spans:
+                Since 2020, I've been working full time as a Software Engineer. Most recently at Zeroflucs, a sports betting technology company, where I work on high-throughput distributed pricing systems in Go.
+                <br/><br/>
+                Prior to that, several years at Domino's focused on backend .NET microservices, cloud migrations (Azure, AWS), DevOps automation, and global platform modernisation — including legacy .NET upgrades, automated translation workflows, SQL deployment pipelines, and cross-team tooling adoption. My experience spans:
                 <ul>
+                    <li>Backend: Go, .NET 6/8, Node.js, GraphQL</li>
+                    <li>Frontend: React, Vite, HTML/CSS</li>
                     <li>Cloud platforms: Azure, AWS</li>
-                    <li>Backend: .NET 6/8, Node.js, GraphQL</li>
-                    <li>DevOps: CI/CD, Azure DevOps, GitHub Actions</li>
-                    <li>Frontend: React, HTML/CSS</li>
-                    <li>Database: SQL Server, CosmosDB</li>
-                    <li>Translation/localisation automation</li>
-                    <li>Technical documentation & onboarding</li>
+                    <li>DevOps: CI/CD, Azure DevOps, GitHub Actions, Harness</li>
+                    <li>Database: SQL Server, CosmosDB, Scylla</li>
+                    <li>Distributed systems: gRPC, protobuf, Kafka, microservices</li>
+                    <li>Performance: parallelisation, caching, batching, load testing</li>
                 </ul>
-                I’m recognised for my technical breadth, reliability, and collaborative approach in high-impact, multi-region projects. I enjoy designing and implementing code across the stack, driving continuous improvement, and supporting global teams.
-                <div class="h-divider">
+                I'm recognised for my technical breadth, reliability, and drive for continuous improvement across both frontend and backend — from low-level performance work to shipping polished user-facing features.<div class="h-divider">
                     <div class="shadow"></div>
                 </div> 
-                Outside of work, I’m still working on my original game project (dev site coming soon), and occasionally write fiction set in the same universe (<Link to="/book" className="nav-link HyperGold">here</Link>). I also enjoy photography—check out my <Link to="/gallery" className="nav-link HyperGold">Gallery</Link> for some travel shots.
+                Outside of work, I'm still working on my original game project (dev site coming soon), and occasionally write fiction set in the same universe (<Link to="/book" className="nav-link HyperGold">here</Link>). I also enjoy photography—check out my <Link to="/gallery" className="nav-link HyperGold">Gallery</Link> for some travel shots.
             </div>
         </div>
       </div>
